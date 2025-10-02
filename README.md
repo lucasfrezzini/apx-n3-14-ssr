@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js 15 - Práctica de SSR, SSG e ISG
 
-## Getting Started
+Este proyecto está diseñado para practicar y entender los diferentes métodos de renderizado en [Next.js 15](https://nextjs.org/): **SSR (Server Side Rendering)**, **SSG (Static Site Generation)** e **ISG (Incremental Static Generation)**.
 
-First, run the development server:
+## Objetivo
+
+Aprender a implementar y comparar las estrategias de renderizado en Next.js 15 utilizando páginas de productos y rutas dinámicas.
+
+## Estructura del Proyecto
+
+- **SSR:** `/products/[id]/ssr`  
+  Renderiza la página en cada request desde el servidor.
+- **SSG:** `/products/[id]/ssg`  
+  Genera la página de manera estática en el build.
+- **ISG:** `/products/[id]/isg`  
+  Genera la página estática y la revalida cada cierto tiempo.
+
+## Tecnologías
+
+- Next.js 15
+- React
+- Tailwind CSS
+- API pública: [Fake Store API](https://fakestoreapi.com/)
+
+## Scripts
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev      # Ejecuta el servidor de desarrollo
+npm run build    # Construye el proyecto para producción
+npm run start    # Inicia el servidor en producción
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Cómo probar cada método
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **SSR:** Accede a `/products/[id]/ssr` y observa cómo los datos se obtienen en cada request.
+- **SSG:** Accede a `/products/[id]/ssg` y verifica que la página se genera en el build.
+- **ISG:** Accede a `/products/[id]/isg` y comprueba la revalidación automática.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Archivos relevantes
 
-## Learn More
+- SSR: [`src/app/products/[id]/ssr/page.tsx`](src/app/products/[id]/ssr/page.tsx)
+- SSG: [`src/app/products/[id]/ssg/page.tsx`](src/app/products/[id]/ssg/page.tsx)
+- ISG: [`src/app/products/[id]/isg/page.tsx`](src/app/products/[id]/isg/page.tsx)
 
-To learn more about Next.js, take a look at the following resources:
+## Recursos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Documentación Next.js](https://nextjs.org/docs)
+- [Fake Store API](https://fakestoreapi.com/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Academia APX.school - Nivel 3**

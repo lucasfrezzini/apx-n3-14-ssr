@@ -10,7 +10,7 @@ export default async function ssr({ params }: { params: { id: string } }) {
   /* @next-codemod-ignore */
   const { id } = await params;
   const res = await fetch(`${base_url}/${id}`);
-  const data = await res.json();
+  const product = await res.json();
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -21,7 +21,7 @@ export default async function ssr({ params }: { params: { id: string } }) {
           busqueda de producto con ID: <strong>{id}</strong>
         </p>
         <div className="text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <ProductCard product={data.product} />
+          <ProductCard product={product} />
         </div>
         <p className="text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <Link className="underline bg-[#ff0] text-black py-2 px-4" href={"/"}>

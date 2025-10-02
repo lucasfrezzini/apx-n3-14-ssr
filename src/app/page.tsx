@@ -42,7 +42,7 @@ export default function Home() {
           <a
             className="underline"
             target="_blank"
-            href="https://github.com/lucasfrezzini/apx-n3-10-01-serverless-api"
+            href="https://github.com/lucasfrezzini/apx-n3-14-ssr"
           >
             <strong>Github here</strong>
           </a>{" "}
